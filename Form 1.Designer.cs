@@ -40,8 +40,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
+            this.namee = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -73,12 +73,15 @@
             this.button5 = new System.Windows.Forms.Button();
             this.allPages = new System.Windows.Forms.TabControl();
             this.viewAllAccount = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.creator_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.viewAccount = new System.Windows.Forms.TabPage();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -88,6 +91,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.addQuiz = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -95,6 +99,13 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.quizzes = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.signup.SuspendLayout();
             this.login.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -108,6 +119,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.viewAccount.SuspendLayout();
             this.addQuiz.SuspendLayout();
+            this.quizzes.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // signup
@@ -128,13 +141,13 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(431, 305);
+            this.button4.Location = new System.Drawing.Point(436, 328);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(75, 31);
             this.button4.TabIndex = 6;
             this.button4.Text = "signup";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.signup_Click);
             // 
             // textBox10
             // 
@@ -191,8 +204,8 @@
             this.login.Controls.Add(this.comboBox1);
             this.login.Controls.Add(this.comboBox2);
             this.login.Controls.Add(this.button2);
-            this.login.Controls.Add(this.textBox7);
-            this.login.Controls.Add(this.textBox6);
+            this.login.Controls.Add(this.pass);
+            this.login.Controls.Add(this.namee);
             this.login.Controls.Add(this.label2);
             this.login.Controls.Add(this.label1);
             this.login.Location = new System.Drawing.Point(-10, -4);
@@ -205,14 +218,13 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "",
             "login as admin",
             "login as creator"});
-            this.comboBox1.Location = new System.Drawing.Point(764, 8);
+            this.comboBox1.Location = new System.Drawing.Point(711, 8);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(174, 24);
             this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "LOGIN";
+            this.comboBox1.Text = "LOGIN as admin/creator";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
@@ -238,20 +250,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox7
+            // pass
             // 
-            this.textBox7.Location = new System.Drawing.Point(465, 237);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 3;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.pass.Location = new System.Drawing.Point(465, 237);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(100, 22);
+            this.pass.TabIndex = 3;
             // 
-            // textBox6
+            // namee
             // 
-            this.textBox6.Location = new System.Drawing.Point(464, 201);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 2;
+            this.namee.Location = new System.Drawing.Point(464, 201);
+            this.namee.Name = "namee";
+            this.namee.Size = new System.Drawing.Size(100, 22);
+            this.namee.TabIndex = 2;
             // 
             // label2
             // 
@@ -267,10 +278,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(404, 201);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "email";
             // 
             // tabPage3
             // 
@@ -454,7 +464,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "add";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
@@ -514,7 +523,6 @@
             this.button6.TabIndex = 1;
             this.button6.Text = "editpassword";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -536,9 +544,11 @@
             this.allPages.SelectedIndex = 0;
             this.allPages.Size = new System.Drawing.Size(1005, 553);
             this.allPages.TabIndex = 3;
+            this.allPages.SelectedIndexChanged += new System.EventHandler(this.show_quiz);
             // 
             // viewAllAccount
             // 
+            this.viewAllAccount.Controls.Add(this.button10);
             this.viewAllAccount.Controls.Add(this.dataGridView3);
             this.viewAllAccount.Location = new System.Drawing.Point(4, 25);
             this.viewAllAccount.Name = "viewAllAccount";
@@ -548,6 +558,17 @@
             this.viewAllAccount.Text = "viewAllAccount";
             this.viewAllAccount.UseVisualStyleBackColor = true;
             this.viewAllAccount.Click += new System.EventHandler(this.viewAllAccount_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.IndianRed;
+            this.button10.Location = new System.Drawing.Point(897, 21);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(83, 34);
+            this.button10.TabIndex = 7;
+            this.button10.Text = "logout";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.logout_Click);
             // 
             // dataGridView3
             // 
@@ -594,6 +615,8 @@
             // 
             // viewAccount
             // 
+            this.viewAccount.Controls.Add(this.button12);
+            this.viewAccount.Controls.Add(this.button9);
             this.viewAccount.Controls.Add(this.label13);
             this.viewAccount.Controls.Add(this.label12);
             this.viewAccount.Controls.Add(this.textBox14);
@@ -609,6 +632,26 @@
             this.viewAccount.TabIndex = 1;
             this.viewAccount.Text = "viewAccount";
             this.viewAccount.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(337, 417);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 9;
+            this.button12.Text = "edit";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.IndianRed;
+            this.button9.Location = new System.Drawing.Point(877, 12);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(81, 43);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "logout";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.logout_Click);
             // 
             // label13
             // 
@@ -680,6 +723,8 @@
             // 
             // addQuiz
             // 
+            this.addQuiz.Controls.Add(this.panel1);
+            this.addQuiz.Controls.Add(this.button8);
             this.addQuiz.Controls.Add(this.button7);
             this.addQuiz.Controls.Add(this.textBox19);
             this.addQuiz.Controls.Add(this.textBox18);
@@ -694,9 +739,19 @@
             this.addQuiz.Text = "addQuiz";
             this.addQuiz.UseVisualStyleBackColor = true;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.IndianRed;
+            this.button8.Location = new System.Drawing.Point(877, 32);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(84, 36);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "logout";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(379, 415);
+            this.button7.Location = new System.Drawing.Point(381, 428);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 8;
@@ -705,7 +760,7 @@
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(256, 116);
+            this.textBox19.Location = new System.Drawing.Point(258, 116);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(370, 22);
             this.textBox19.TabIndex = 7;
@@ -746,6 +801,7 @@
             // 
             // quizzes
             // 
+            this.quizzes.Controls.Add(this.button11);
             this.quizzes.Location = new System.Drawing.Point(4, 25);
             this.quizzes.Name = "quizzes";
             this.quizzes.Size = new System.Drawing.Size(997, 524);
@@ -753,14 +809,78 @@
             this.quizzes.Text = "Quizzes";
             this.quizzes.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.IndianRed;
+            this.button11.Location = new System.Drawing.Point(877, 23);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(83, 43);
+            this.button11.TabIndex = 8;
+            this.button11.Text = "logout";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.logout_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button13);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 535);
+            this.panel1.TabIndex = 9;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(602, 86);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(169, 22);
+            this.textBox6.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(249, 84);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 16);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Subject";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(241, 163);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 16);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Number Of Question";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(602, 157);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(169, 22);
+            this.textBox7.TabIndex = 3;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(406, 279);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(90, 36);
+            this.button13.TabIndex = 4;
+            this.button13.Text = "Submit";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.allPages);
             this.Controls.Add(this.login);
             this.Controls.Add(this.signup);
-            this.Controls.Add(this.allPages);
             this.Name = "Form1";
             this.Text = "mainPage";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -783,6 +903,9 @@
             this.viewAccount.PerformLayout();
             this.addQuiz.ResumeLayout(false);
             this.addQuiz.PerformLayout();
+            this.quizzes.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -812,8 +935,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel login;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox pass;
+        private System.Windows.Forms.TextBox namee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -855,6 +978,17 @@
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label15;
     }
 }
 

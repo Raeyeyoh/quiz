@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quiz.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,26 +12,22 @@ using System.Windows.Forms;
 namespace quiz
 {
     public partial class Form1 : Form
+
     {
+        private thequizzes quizControl;
+        private Questions questionControl;
+
         public Form1()
         {
             InitializeComponent();
+            quizControl = new thequizzes();
+            questionControl = new Questions();
+
+            quizControl.QuizStarted += QuizControl_QuizStarted;
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -38,72 +35,111 @@ namespace quiz
             login.BringToFront();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
+    
 
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-                
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string email = namee.Text;
+            string password = pass.Text;
+            int selectedRole = comboBox1.SelectedIndex; 
+
             allPages.TabPages.Clear();
-            
-          
-                allPages.TabPages.Add(viewAccount);
-                allPages.TabPages.Add(quizzes);
-                //it saves the users session
-                login.Visible = false;
 
-            
-             if (comboBox1.SelectedIndex == 0) {
-                allPages.TabPages.Add(viewAccount);
-                allPages.TabPages.Add(viewAllAccount);
-               
-
-
-                login.Visible = false;
-            }
-            else if (comboBox1.SelectedIndex == 1) {
-                allPages.TabPages.Add(viewAccount);
-                allPages.TabPages.Add(addQuiz);
-
-
-                login.Visible = false;
-            }
-
-            }
-
-        private void homepage_Paint(object sender, PaintEventArgs e)
-        {
            
+            if (selectedRole == 0)
+            {
+                AdminController admin = new AdminController();
+                if (admin.login(email, password))
+                {
+                    allPages.TabPages.Add(viewAccount);
+                    allPages.TabPages.Add(viewAllAccount);
+                    login.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect username or password");
+                }
+            }
+
+            else if (selectedRole == 1)
+            {
+                quesitonContributor creator = new quesitonContributor();
+                if (creator.login(email, password))
+                {
+                    allPages.TabPages.Add(viewAccount);
+                    allPages.TabPages.Add(addQuiz);
+                    login.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect username or password");
+                }
+            }
+
+            
+            else
+            {
+                UserController user = new UserController();
+                if (user.login(email, password))
+                {
+                    allPages.TabPages.Add(viewAccount);
+                    allPages.TabPages.Add(quizzes);
+                    login.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect username or password");
+                }
+            }
         }
+
+
+
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
            signup.Visible = true;
             signup.BringToFront();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void signup_Click(object sender, EventArgs e)
         {
-            login.Visible=true;
-            signup.Visible = false;
+            string name = textBox8.Text;
+            string email = textBox9.Text;
+            string password = textBox10.Text;
+
+           
+
+            bool success = false;
+
+            if (comboBox2.SelectedIndex == 1) 
+            {
+                UserController userController = new UserController();
+                success = userController.register(name, email, password);
+            }
+            else if (comboBox2.SelectedIndex == 0) 
+            {
+                quesitonContributor creatorController = new quesitonContributor();
+                success = creatorController.register(name, email, password);
+            }
+           
+
+            if (success)
+            {
+                MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                login.Visible = true;
+                signup.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Registration failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
 
-        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -119,5 +155,38 @@ namespace quiz
         {
 
         }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            login.Visible=true;
+            login.BringToFront();
+            namee.Text=null;
+            pass.Text=null;
+        }
+       
+
+      
+        public void show_quiz(object sender, EventArgs e)
+        {
+            if (allPages.SelectedTab == quizzes)
+            {
+                quizzes.Controls.Add(quizControl);
+                
+            }
+        }
+        
+        private void QuizControl_QuizStarted(object sender, EventArgs e)
+        {
+            
+            allPages.Visible = false;
+
+         
+            questionControl.Dock = DockStyle.Fill;
+            this.Controls.Add(questionControl);
+            questionControl.Visible=true;
+            questionControl.BringToFront();
+        }
+
+       
     }
 }
