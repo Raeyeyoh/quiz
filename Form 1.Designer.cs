@@ -91,6 +91,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.addQuiz = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox19 = new System.Windows.Forms.TextBox();
@@ -100,12 +106,6 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.quizzes = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button13 = new System.Windows.Forms.Button();
             this.signup.SuspendLayout();
             this.login.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -119,8 +119,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.viewAccount.SuspendLayout();
             this.addQuiz.SuspendLayout();
-            this.quizzes.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.quizzes.SuspendLayout();
             this.SuspendLayout();
             // 
             // signup
@@ -220,7 +220,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "login as admin",
             "login as creator"});
-            this.comboBox1.Location = new System.Drawing.Point(711, 8);
+            this.comboBox1.Location = new System.Drawing.Point(667, 8);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(174, 24);
             this.comboBox1.TabIndex = 1;
@@ -557,7 +557,6 @@
             this.viewAllAccount.TabIndex = 0;
             this.viewAllAccount.Text = "viewAllAccount";
             this.viewAllAccount.UseVisualStyleBackColor = true;
-            this.viewAllAccount.Click += new System.EventHandler(this.viewAllAccount_Click);
             // 
             // button10
             // 
@@ -739,6 +738,60 @@
             this.addQuiz.Text = "addQuiz";
             this.addQuiz.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button13);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Location = new System.Drawing.Point(8, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 535);
+            this.panel1.TabIndex = 9;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(406, 279);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(90, 36);
+            this.button13.TabIndex = 4;
+            this.button13.Text = "Submit";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(602, 157);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(169, 22);
+            this.textBox7.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(241, 163);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 16);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Number Of Question";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(249, 84);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 16);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Subject";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(602, 86);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(169, 22);
+            this.textBox6.TabIndex = 0;
+            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.IndianRed;
@@ -757,6 +810,7 @@
             this.button7.TabIndex = 8;
             this.button7.Text = "add";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // textBox19
             // 
@@ -765,7 +819,6 @@
             this.textBox19.Size = new System.Drawing.Size(370, 22);
             this.textBox19.TabIndex = 7;
             this.textBox19.Text = "the question";
-            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
             // textBox18
             // 
@@ -820,59 +873,6 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.logout_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 535);
-            this.panel1.TabIndex = 9;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(602, 86);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(169, 22);
-            this.textBox6.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(249, 84);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 16);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Subject";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(241, 163);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 16);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Number Of Question";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(602, 157);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(169, 22);
-            this.textBox7.TabIndex = 3;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(406, 279);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(90, 36);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "Submit";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -903,9 +903,9 @@
             this.viewAccount.PerformLayout();
             this.addQuiz.ResumeLayout(false);
             this.addQuiz.PerformLayout();
-            this.quizzes.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.quizzes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

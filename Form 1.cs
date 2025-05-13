@@ -36,12 +36,13 @@ namespace quiz
         }
 
     
-
+             string name ;
+            string password;
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string email = namee.Text;
-            string password = pass.Text;
+            name=namee.Text;
+            password = pass.Text;
             int selectedRole = comboBox1.SelectedIndex; 
 
             allPages.TabPages.Clear();
@@ -50,7 +51,7 @@ namespace quiz
             if (selectedRole == 0)
             {
                 AdminController admin = new AdminController();
-                if (admin.login(email, password))
+                if (admin.login(name, password))
                 {
                     allPages.TabPages.Add(viewAccount);
                     allPages.TabPages.Add(viewAllAccount);
@@ -64,8 +65,9 @@ namespace quiz
 
             else if (selectedRole == 1)
             {
+               
                 quesitonContributor creator = new quesitonContributor();
-                if (creator.login(email, password))
+                if (creator.login(name, password))
                 {
                     allPages.TabPages.Add(viewAccount);
                     allPages.TabPages.Add(addQuiz);
@@ -81,7 +83,7 @@ namespace quiz
             else
             {
                 UserController user = new UserController();
-                if (user.login(email, password))
+                if (user.login(name, password))
                 {
                     allPages.TabPages.Add(viewAccount);
                     allPages.TabPages.Add(quizzes);
@@ -143,18 +145,11 @@ namespace quiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            var seeder = new AdminSeeder();
+            seeder.SeedSuperAdmin();
         }
 
-        private void viewAllAccount_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox19_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void logout_Click(object sender, EventArgs e)
         {
@@ -187,6 +182,20 @@ namespace quiz
             questionControl.BringToFront();
         }
 
-       
+        private void button13_Click(object sender, EventArgs e)
+        {
+             string sub= textBox6.Text;
+            int timelim = Convert.ToInt32 (textBox7.Text);
+            QuizController quizController = new QuizController();
+            quizController.CreateQuiz(sub,timelim,name);
+            //we will insert and create  the quiz with the creators  name  and the sub and no question then git its id from db then
+            panel1.Visible=false;
+            
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //we will insert then clear the textboxes for the next question button is disabled until they are approved by admin
+        }
     }
 }
