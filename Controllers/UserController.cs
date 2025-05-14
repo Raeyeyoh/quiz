@@ -26,14 +26,14 @@ namespace quiz.Controllers
             return result > 0;
         }
 
-        public bool login(string email, string password)
+        public bool login(string name, string password)
         {
             dbconnection db = new dbconnection();
             SqlConnection con = db.openConnection();
 
-            string query = "SELECT COUNT(*) FROM users WHERE email = @mail AND password = @pass";
+            string query = "SELECT COUNT(*) FROM users WHERE user_name = @name AND password = @pass";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@mail", email);
+            cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@pass", password);
 
             int count = (int)cmd.ExecuteScalar();

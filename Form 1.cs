@@ -185,12 +185,16 @@ namespace quiz
         private void button13_Click(object sender, EventArgs e)
         {
              string sub= textBox6.Text;
-            int timelim = Convert.ToInt32 (textBox7.Text);
+            int numberofquestions = Convert.ToInt32(textBox7.Text);
+           int timelim = Convert.ToInt32(textBox20.Text);
             QuizController quizController = new QuizController();
-            quizController.CreateQuiz(sub,timelim,name);
-            //we will insert and create  the quiz with the creators  name  and the sub and no question then git its id from db then
+            int creatorId = quizController.GetCreatorIdByName(name);
+
+            quizController.CreateQuiz(sub, creatorId, numberofquestions, timelim);
             panel1.Visible=false;
-            
+            //we will insert and create  the quiz with the creators  name  and the sub and no question then git its id from db then
+
+
         }
 
         private void button7_Click(object sender, EventArgs e)

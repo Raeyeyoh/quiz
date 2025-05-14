@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quiz
 {
@@ -44,10 +45,14 @@ namespace quiz
 
                             if (rowsAffected > 0)
                             {
-                                Console.WriteLine("Super admin account created successfully");
-                                Console.WriteLine($"Temporary credentials: {AdminEmail} / {AdminPassword}");
-                                Console.WriteLine("IMPORTANT: Change this password immediately after first login!");
+                            MessageBox.Show($"Temporary credentials:\n" + $"Email: {AdminEmail}\n" + $"Password: {AdminPassword}\n\n" +
+                                          MessageBoxButtons.OK);
+
+                    
                             }
+                    
+                     
+                        
                         }
                     }
                 }

@@ -106,6 +106,8 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.quizzes = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.signup.SuspendLayout();
             this.login.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -278,9 +280,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(404, 201);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "email";
+            this.label1.Text = "name";
             // 
             // tabPage3
             // 
@@ -740,12 +742,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox20);
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Location = new System.Drawing.Point(8, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 535);
             this.panel1.TabIndex = 9;
@@ -801,6 +805,7 @@
             this.button8.TabIndex = 5;
             this.button8.Text = "logout";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.logout_Click);
             // 
             // button7
             // 
@@ -873,14 +878,30 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.logout_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(241, 226);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(87, 16);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "time/question";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(602, 226);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(169, 22);
+            this.textBox20.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.allPages);
             this.Controls.Add(this.login);
             this.Controls.Add(this.signup);
+            this.Controls.Add(this.allPages);
             this.Name = "Form1";
             this.Text = "mainPage";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -989,6 +1010,8 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.Label label16;
     }
 }
 
