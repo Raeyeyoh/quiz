@@ -1,5 +1,7 @@
-﻿using System;
+﻿using quiz.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,27 +25,94 @@ namespace quiz.Controllers
                 return Convert.ToInt32(result);
             
         }
-        public bool CreateQuiz(String Subject,int CreatedBy ,int noquestion,int TimeLimit =30 )
+        public int CreateQuiz(string Subject, int CreatedBy, int noquestion)
+        {
+            dbconnection db = new dbconnection();
+            SqlConnection con = db.openConnection();
+
+            string sql = @"
+        INSERT INTO Quiz (subject, created_by, numberofquestion)
+        VALUES (@subject, @createdBy, @noquestion);
+        SELECT CAST(SCOPE_IDENTITY() as int);
+    ";
+
+            SqlCommand command = new SqlCommand(sql, con);
+
+            command.Parameters.AddWithValue("@subject", Subject);
+            command.Parameters.AddWithValue("@createdBy", CreatedBy);
+            command.Parameters.AddWithValue("@noquestion", noquestion);
+            
+
+            
+            int newQuizId = (int)command.ExecuteScalar();
+
+            db.closeConnection();
+
+            return newQuizId;
+        }
+
+        public List<Quiz> GetAllQuizzes()
+        {
+            List<Quiz> quizzes = new List<Quiz>();
+            dbconnection db = new dbconnection();
+            SqlConnection con = db.openConnection();
+
+            string query = "SELECT quiz_id, subject, numberofquestion FROM Quiz";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                quizzes.Add(new Quiz
+                {
+                    Id = (int) reader["quiz_id"],
+                    Subject = reader["subject"].ToString(),
+                    NumberOfQuestions = (int) reader["numberofquestion"],
+                    
+                }); ;
+            }
+
+            reader.Close();
+            db.closeConnection();
+
+            return quizzes;
+        }
+        public DataTable GetQuizzesByCreator(int userId)
         {
             dbconnection db = new dbconnection();
             SqlConnection con = db.openConnection();
             
+                string query = @"SELECT quiz_id, subject FROM Quiz WHERE created_by = @userId";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@userId", userId);
 
-                string sql = @"
-                    INSERT INTO Quiz ( subject,  created_by,numberofquestion ,time_limit)
-                    VALUES ( @subject, @createdBy,@noquestion , @timeLimit)";
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            
+        }
 
-            SqlCommand command = new SqlCommand(sql, con);
+        public bool DeleteQuizById(int quizId)
+        {
+            var questionController = new QuestionController();
+
+            
+            questionController.DeleteQuestionsByQuizId(quizId);
+
+            dbconnection db = new dbconnection();
+            SqlConnection con = db.openConnection();
+            
+                string sql = "DELETE FROM Quiz WHERE quiz_id = @quizId";
+            SqlCommand cmd = new SqlCommand(sql, con);
                 
-                    command.Parameters.AddWithValue("@subject", Subject);
-            command.Parameters.AddWithValue("@createdBy", CreatedBy);
-            command.Parameters.AddWithValue("@timeLimit", TimeLimit);
-            command.Parameters.AddWithValue("@noquestion", noquestion);
-            command.Parameters.AddWithValue("@timeLimit", TimeLimit);
-            int rowsAffected = command.ExecuteNonQuery();
-            return rowsAffected > 0; 
-                  
+                    cmd.Parameters.AddWithValue("@quizId", quizId);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                
             
         }
     }
+
+
 }

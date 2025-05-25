@@ -11,10 +11,9 @@ namespace quiz
 {
         public class AdminSeeder {
        
-            // Default admin credentials (should be changed after first login)
             private const string AdminEmail = "admin@quizsystem.com";
-            private const string AdminPassword = "Temp@Admin123";
-            private const string AdminName = "System Administrator";
+            private const string AdminPassword = "Admin123";
+            private const string AdminName = "Admin";
 
             public void SeedSuperAdmin()
             {
@@ -22,7 +21,6 @@ namespace quiz
                 {
                     using (SqlConnection con = new dbconnection().openConnection())
                     {
-                        // Checking to see if admin already exists
                         if (AdminExists(con, AdminEmail))
                         {
                             
@@ -45,15 +43,15 @@ namespace quiz
 
                             if (rowsAffected > 0)
                             {
-                            MessageBox.Show($"Temporary credentials:\n" + $"Email: {AdminEmail}\n" + $"Password: {AdminPassword}\n\n" +
+                            MessageBox.Show($" credentials:\n" + $"name: {AdminName}\n" + $"Password: {AdminPassword}\n\n" +
                                           MessageBoxButtons.OK);
 
-                    
+          
                             }
                     
-                     
-                        
                         }
+                    
+                       
                     }
                 }
                 catch (Exception ex)
@@ -75,5 +73,5 @@ namespace quiz
 
            
         }
-    }
+ }
 

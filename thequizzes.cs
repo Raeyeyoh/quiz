@@ -19,22 +19,25 @@ namespace quiz
             InitializeComponent();
         }
 
-        private void thequizzes_Load(object sender, EventArgs e)
-        {
+        public int QuizId { get; set; }
 
+       
+
+        public void SetQuizData(string subject, int totalQuestions)
+        {
+            label1.Text = subject;
+            label2.Text = $"Questions: {totalQuestions}";
+            
         }
 
         private void buttonclicked(object sender, EventArgs e)
         {
-            //MessageBox.Show("get ready!"); 
+            MessageBox.Show("get ready!"); 
 
             QuizStarted?.Invoke(this, EventArgs.Empty);
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
