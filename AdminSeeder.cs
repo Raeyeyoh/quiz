@@ -19,7 +19,7 @@ namespace quiz
             {
                 try
                 {
-                    SqlConnection con = new dbconnection().openConnection()
+                SqlConnection con = new dbconnection().openConnection();
                     
                         if (AdminExists(con, AdminEmail))
                         {
@@ -30,10 +30,10 @@ namespace quiz
                         
                         string sql = @"INSERT INTO Admin (name, email, password) VALUES  (@name, @email, @password)";
 
-                    
-                     
 
-                        SqlCommand cmd = new SqlCommand(sql, con)
+
+
+                SqlCommand cmd = new SqlCommand(sql, con);
                         
                             cmd.Parameters.AddWithValue("@name", AdminName);
                             cmd.Parameters.AddWithValue("@email", AdminEmail);
@@ -64,11 +64,11 @@ namespace quiz
             private bool AdminExists(SqlConnection con, string email)
             {
                 string sql = "SELECT COUNT(*) FROM Admin WHERE email = @email";
-                using (SqlCommand cmd = new SqlCommand(sql, con))
-                {
+                SqlCommand cmd = new SqlCommand(sql, con);
+                
                     cmd.Parameters.AddWithValue("@email", email);
                     return (int)cmd.ExecuteScalar() > 0;
-                }
+                
             }
 
            
