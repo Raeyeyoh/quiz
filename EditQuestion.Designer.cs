@@ -33,8 +33,8 @@
             this.textBoxOptionC = new System.Windows.Forms.TextBox();
             this.textBoxOptionB = new System.Windows.Forms.TextBox();
             this.textBoxOptionA = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nxt = new System.Windows.Forms.Button();
+            this.prev = new System.Windows.Forms.Button();
             this.submitbtn = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.answer = new System.Windows.Forms.ComboBox();
@@ -86,27 +86,27 @@
             this.textBoxOptionA.TabIndex = 9;
             this.textBoxOptionA.Text = "choice A";
             // 
-            // button1
+            // nxt
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(445, 425);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 31);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "next";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.next_btn);
+            this.nxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nxt.Location = new System.Drawing.Point(445, 425);
+            this.nxt.Name = "nxt";
+            this.nxt.Size = new System.Drawing.Size(89, 31);
+            this.nxt.TabIndex = 15;
+            this.nxt.Text = "next";
+            this.nxt.UseVisualStyleBackColor = true;
+            this.nxt.Click += new System.EventHandler(this.next_btn);
             // 
-            // button2
+            // prev
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(139, 425);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 31);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "prev";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.prev_btn);
+            this.prev.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prev.Location = new System.Drawing.Point(139, 425);
+            this.prev.Name = "prev";
+            this.prev.Size = new System.Drawing.Size(89, 31);
+            this.prev.TabIndex = 16;
+            this.prev.Text = "prev";
+            this.prev.UseVisualStyleBackColor = true;
+            this.prev.Click += new System.EventHandler(this.prev_btn);
             // 
             // submitbtn
             // 
@@ -122,7 +122,7 @@
             // exit
             // 
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(749, 3);
+            this.exit.Location = new System.Drawing.Point(13, 13);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(27, 29);
             this.exit.TabIndex = 19;
@@ -164,8 +164,8 @@
             this.Controls.Add(this.answer);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.submitbtn);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.prev);
+            this.Controls.Add(this.nxt);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.textBoxOptionD);
             this.Controls.Add(this.textBoxOptionC);
@@ -184,8 +184,8 @@
         private System.Windows.Forms.TextBox textBoxOptionC;
         private System.Windows.Forms.TextBox textBoxOptionB;
         private System.Windows.Forms.TextBox textBoxOptionA;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button nxt;
+        private System.Windows.Forms.Button prev;
         private System.Windows.Forms.Button submitbtn;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.ComboBox answer;

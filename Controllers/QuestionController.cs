@@ -80,8 +80,8 @@ namespace quiz.Controllers
         {
             dbconnection db = new dbconnection();
 
-            using (SqlConnection con = db.openConnection())
-            {
+            SqlConnection con = db.openConnection();
+            
                 string query = @"
             UPDATE Questions 
             SET 
@@ -106,7 +106,7 @@ namespace quiz.Controllers
 
                 int rowsAffected = cmd.ExecuteNonQuery();
                 return rowsAffected > 0;
-            }
+            
         }
 
         public bool DeleteQuestionsByQuizId(int quizId)

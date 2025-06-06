@@ -58,11 +58,11 @@ namespace quiz.Controllers
             INNER JOIN Quiz q ON uqs.quiz_id = q.quiz_id
             WHERE uqs.user_id = @userId";
 
-                SqlCommand cmd = new SqlCommand(query, con)
+            SqlCommand cmd = new SqlCommand(query, con);
                 
                     cmd.Parameters.AddWithValue("@userId", userId);
 
-                    SqlDataReader reader = cmd.ExecuteReader()
+            SqlDataReader reader = cmd.ExecuteReader();
                     
                         while (reader.Read())
                         {

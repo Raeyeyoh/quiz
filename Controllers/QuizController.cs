@@ -85,7 +85,6 @@ namespace quiz.Controllers
                 string query = @"SELECT quiz_id, subject FROM Quiz WHERE created_by = @userId";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@userId", userId);
-
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);

@@ -312,44 +312,52 @@ namespace quiz
         {
             sub = textBox6.Text;
             totalQuestions = Convert.ToInt32(textBox7.Text);
-             
 
-            string questionText = textBox19.Text;
-            List<string> options = new List<string>
+          string questionText = textBox19.Text;
+            if (string.IsNullOrWhiteSpace(questionText))
+            {
+                MessageBox.Show("Question text cannot be empty.");
+                return;
+            }
+            
+             List<string> options = new List<string>
+
+          
     {
         textBox15.Text,
         textBox16.Text,
         textBox17.Text,
         textBox18.Text
     };
-            string correctOption;
-            switch(correctanswer.SelectedIndex)
+         foreach (string opt in options)
+            {
+                if (string.IsNullOrWhiteSpace(opt))
                 {
-                      case 0:
-                    correctOption = textBox15.Text;
-                    
+                    MessageBox.Show("All options must be filled out.");
+                    return;
+                }
+            }
+
+            string correctOption;
+            switch (correctanswer.SelectedIndex)
+            {
+                case 0:
+                    correctOption = options[0];
                     break;
                 case 1:
-                    correctOption = textBox16.Text;
-                    
+                    correctOption = options[1];
                     break;
                 case 2:
-                    correctOption = textBox17.Text;
-                    
+                    correctOption = options[2];
                     break;
                 case 3:
-                    correctOption = textBox18.Text;
+                    correctOption = options[3];
                     break;
-                    default:
-                    correctOption = null;
-               MessageBox.Show("choose correct answer");
-                   break;
-                      
-                }  
-                
-
-
-                Questions question = new Questions
+                default:
+                    MessageBox.Show("Please select the correct answer.");
+                    return;
+            }
+            Questions question = new Questions
             {
                 QuestionText = questionText,
                 Options = options,
@@ -394,8 +402,7 @@ namespace quiz
             textBox16.Visible = false;
             textBox17.Visible = false;
             textBox18.Visible = false;
-            
-            textBox19.Visible = false;
+             textBox19.Visible = false;
             MessageBox.Show("Quiz and questions created successfully!");
             subbtn.Enabled = false;
             questionsList.Clear();

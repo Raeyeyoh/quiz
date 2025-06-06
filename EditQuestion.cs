@@ -45,8 +45,8 @@ namespace quiz
         }
         private void UpdateNavigationButtons()
         {
-            button1.Enabled = currentQuestionIndex < questionsList.Count - 1;
-            button2.Enabled = currentQuestionIndex > 0; 
+            nxt.Enabled = currentQuestionIndex < questionsList.Count - 1;
+            prev.Enabled = currentQuestionIndex > 0; 
         }
         private void DisplayQuestion(int index)
         {
@@ -76,9 +76,11 @@ namespace quiz
 
         private void next_btn(object sender, EventArgs e)
         {
-            SaveCurrentEdits();
+            if (!SaveCurrentEdits()) return;
+            
             if (currentQuestionIndex < questionsList.Count - 1)
             {
+
                 currentQuestionIndex++;
                 DisplayQuestion(currentQuestionIndex);
             }
@@ -86,7 +88,8 @@ namespace quiz
 
         private void prev_btn(object sender, EventArgs e)
         {
-            SaveCurrentEdits();
+            if (!SaveCurrentEdits()) return;
+          
             if (currentQuestionIndex > 0)
             {
                 currentQuestionIndex--;
@@ -96,21 +99,38 @@ namespace quiz
 
         private void sub_CLICKED(object sender, EventArgs e)
         {
-            SaveCurrentEdits(); 
+            SaveCurrentEdits(); //for last one
 
             var controller = new QuestionController();
 
             for (int i = 0; i < questionsList.Count; i++)
             {
-                controller.UpdateQuestion(quizId, i, questionsList[i]);
+                int questionId = questionsList[i].Id;
+                controller.UpdateQuestion(quizId, questionId, questionsList[i]);
             }
 
             MessageBox.Show("All questions updated successfully!");
             this.Parent.Controls.Remove(this);
         }
 
-        private void SaveCurrentEdits()
+        private bool SaveCurrentEdits()
         {
+            if (string.IsNullOrWhiteSpace(textBoxQuestion.Text) ||
+        string.IsNullOrWhiteSpace(textBoxOptionA.Text) ||
+        string.IsNullOrWhiteSpace(textBoxOptionB.Text) ||
+        string.IsNullOrWhiteSpace(textBoxOptionC.Text) ||
+        string.IsNullOrWhiteSpace(textBoxOptionD.Text))
+            {
+                MessageBox.Show("Please fill in all question fields before proceeding.");
+                return false;
+            }
+
+            
+            if (answer.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose the correct answer before proceeding.");
+                return false;
+            }
             if (currentQuestionIndex >= 0 && currentQuestionIndex < questionsList.Count)
             {
                 questionsList[currentQuestionIndex].QuestionText = textBoxQuestion.Text;
@@ -137,10 +157,11 @@ namespace quiz
                         questionsList[currentQuestionIndex].CorrectOption = textBoxOptionD.Text;
                         break;
                     default:
-                        MessageBox.Show("Please choose the correct answer before proceeding.");
-                        return;
+                        
+                        return false;
                 }
             }
+            return true;
         }
 
         private void exit_Click(object sender, EventArgs e)
