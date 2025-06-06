@@ -73,10 +73,12 @@ namespace quiz.Controllers
                             list.Add((quizName, status, completionDate));
                         }
                     
-                
+                return list;
             
-            return list;
+            
         }
 
+
     }
+
 }

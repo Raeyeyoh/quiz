@@ -113,7 +113,10 @@ namespace quiz.Controllers
         {
             dbconnection db = new dbconnection();
             SqlConnection con = db.openConnection();
-
+            string deleteStatusSql = "DELETE FROM UsersQuizStatus WHERE quiz_id = @quizId";
+            SqlCommand deleteStatusCmd = new SqlCommand(deleteStatusSql, con);
+            deleteStatusCmd.Parameters.AddWithValue("@quizId", quizId);
+            deleteStatusCmd.ExecuteNonQuery();
             string sql = "DELETE FROM Questions WHERE quiz_id = @quizId";
             SqlCommand cmd = new SqlCommand(sql, con);
 

@@ -119,6 +119,10 @@
             this.button21 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.listBoxQuizStatus = new System.Windows.Forms.ListBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.signup.SuspendLayout();
             this.login.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -821,6 +825,10 @@
             // 
             this.addQuiz.BackColor = System.Drawing.Color.Maroon;
             this.addQuiz.Controls.Add(this.panel1);
+            this.addQuiz.Controls.Add(this.label11);
+            this.addQuiz.Controls.Add(this.label10);
+            this.addQuiz.Controls.Add(this.label9);
+            this.addQuiz.Controls.Add(this.label8);
             this.addQuiz.Controls.Add(this.correctanswer);
             this.addQuiz.Controls.Add(this.subbtn);
             this.addQuiz.Controls.Add(this.button8);
@@ -848,7 +856,7 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(5, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(992, 512);
             this.panel1.TabIndex = 9;
@@ -929,7 +937,7 @@
             "B",
             "C",
             "D"});
-            this.correctanswer.Location = new System.Drawing.Point(351, 342);
+            this.correctanswer.Location = new System.Drawing.Point(439, 362);
             this.correctanswer.Name = "correctanswer";
             this.correctanswer.Size = new System.Drawing.Size(157, 26);
             this.correctanswer.TabIndex = 12;
@@ -972,45 +980,45 @@
             // textBox19
             // 
             this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(258, 116);
+            this.textBox19.Location = new System.Drawing.Point(89, 116);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(382, 27);
+            this.textBox19.Size = new System.Drawing.Size(833, 27);
             this.textBox19.TabIndex = 7;
             this.textBox19.Text = "the question";
             // 
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(649, 314);
+            this.textBox18.Location = new System.Drawing.Point(561, 314);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(92, 27);
+            this.textBox18.Size = new System.Drawing.Size(361, 27);
             this.textBox18.TabIndex = 6;
             this.textBox18.Text = "choice D";
             // 
             // textBox17
             // 
             this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(129, 305);
+            this.textBox17.Location = new System.Drawing.Point(80, 305);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(92, 27);
+            this.textBox17.Size = new System.Drawing.Size(399, 27);
             this.textBox17.TabIndex = 5;
             this.textBox17.Text = "choice C";
             // 
             // textBox16
             // 
             this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(649, 212);
+            this.textBox16.Location = new System.Drawing.Point(550, 212);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(92, 27);
+            this.textBox16.Size = new System.Drawing.Size(372, 27);
             this.textBox16.TabIndex = 4;
             this.textBox16.Text = "choice B";
             // 
             // textBox15
             // 
             this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(129, 212);
+            this.textBox15.Location = new System.Drawing.Point(89, 212);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(92, 27);
+            this.textBox15.Size = new System.Drawing.Size(390, 27);
             this.textBox15.TabIndex = 3;
             this.textBox15.Text = "choice A";
             // 
@@ -1070,6 +1078,50 @@
             this.listBoxQuizStatus.Name = "listBoxQuizStatus";
             this.listBoxQuizStatus.Size = new System.Drawing.Size(954, 464);
             this.listBoxQuizStatus.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(51, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(18, 18);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "A";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(525, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(19, 18);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "B";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(526, 318);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 18);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "D";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(47, 306);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 18);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "C";
             // 
             // Form1
             // 
@@ -1203,6 +1255,10 @@
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
 

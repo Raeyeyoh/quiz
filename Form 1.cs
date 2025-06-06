@@ -271,14 +271,6 @@ namespace quiz
             allPages.SelectedTab = addquiztabpage;
                 }
         }
-
-       
-     
-     
-
-        
-
-       
  
 
         private void ViewAccount(object sender, EventArgs e)
