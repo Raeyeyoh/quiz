@@ -29,3 +29,4 @@ namespace quiz
         public void closeConnection() { connection.Close(); }
     }
 }
+  

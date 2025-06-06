@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.signup = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -73,6 +75,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.allPages = new System.Windows.Forms.TabControl();
             this.viewAllAccount = new System.Windows.Forms.TabPage();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.dataGridViewContributors = new System.Windows.Forms.DataGridView();
@@ -82,8 +85,8 @@
             this.apprDis = new System.Windows.Forms.DataGridViewButtonColumn();
             this.quizzes = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
-            this.quizFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button12 = new System.Windows.Forms.Button();
+            this.quizFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.viewQuiz = new System.Windows.Forms.TabPage();
             this.button20 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -102,7 +105,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.correctanswer = new System.Windows.Forms.ComboBox();
             this.subbtn = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
@@ -112,6 +115,7 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox14 = new System.Windows.Forms.TextBox();
             this.button21 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.listBoxQuizStatus = new System.Windows.Forms.ListBox();
@@ -136,7 +140,8 @@
             // 
             // signup
             // 
-            this.signup.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.signup.BackColor = System.Drawing.Color.Maroon;
+            this.signup.Controls.Add(this.button7);
             this.signup.Controls.Add(this.button4);
             this.signup.Controls.Add(this.textBox10);
             this.signup.Controls.Add(this.textBox9);
@@ -150,13 +155,27 @@
             this.signup.TabIndex = 2;
             this.signup.Visible = false;
             // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(925, 8);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(41, 34);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "❌";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.X_Click);
+            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(436, 328);
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(436, 348);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 31);
+            this.button4.Size = new System.Drawing.Size(110, 31);
             this.button4.TabIndex = 6;
-            this.button4.Text = "signup";
+            this.button4.Text = "SignUp";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.signup_Click);
             // 
@@ -164,54 +183,57 @@
             // 
             this.textBox10.Location = new System.Drawing.Point(457, 273);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
+            this.textBox10.Size = new System.Drawing.Size(227, 22);
             this.textBox10.TabIndex = 5;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(457, 228);
+            this.textBox9.Location = new System.Drawing.Point(457, 219);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
+            this.textBox9.Size = new System.Drawing.Size(227, 22);
             this.textBox9.TabIndex = 4;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(457, 173);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
+            this.textBox8.Size = new System.Drawing.Size(227, 22);
             this.textBox8.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(354, 282);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(344, 273);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "password";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(354, 234);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(344, 219);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 16);
+            this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(351, 180);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(341, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.Size = new System.Drawing.Size(54, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "name";
             // 
             // login
             // 
             this.login.AutoScroll = true;
-            this.login.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.login.BackColor = System.Drawing.Color.Maroon;
             this.login.Controls.Add(this.comboBox1);
             this.login.Controls.Add(this.comboBox2);
             this.login.Controls.Add(this.button2);
@@ -227,33 +249,36 @@
             // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "login as admin",
             "login as creator"});
-            this.comboBox1.Location = new System.Drawing.Point(667, 8);
+            this.comboBox1.Location = new System.Drawing.Point(656, 8);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 24);
+            this.comboBox1.Size = new System.Drawing.Size(204, 24);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "LOGIN as admin/creator";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "signup as creator",
             "signup as user"});
-            this.comboBox2.Location = new System.Drawing.Point(891, 8);
+            this.comboBox2.Location = new System.Drawing.Point(865, 8);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.Size = new System.Drawing.Size(146, 24);
             this.comboBox2.TabIndex = 1;
-            this.comboBox2.Text = "SIGNUP";
+            this.comboBox2.Text = "signup as creator";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.signupcomboboxclicked);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(419, 323);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 44);
@@ -264,35 +289,37 @@
             // 
             // pass
             // 
-            this.pass.Location = new System.Drawing.Point(465, 237);
+            this.pass.Location = new System.Drawing.Point(474, 239);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(320, 22);
+            this.pass.Size = new System.Drawing.Size(339, 22);
             this.pass.TabIndex = 3;
             // 
             // namee
             // 
-            this.namee.Location = new System.Drawing.Point(464, 201);
+            this.namee.Location = new System.Drawing.Point(474, 199);
             this.namee.Name = "namee";
-            this.namee.Size = new System.Drawing.Size(321, 22);
+            this.namee.Size = new System.Drawing.Size(339, 22);
             this.namee.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(379, 239);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(342, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.Size = new System.Drawing.Size(97, 22);
             this.label2.TabIndex = 1;
-            this.label2.Text = "password";
+            this.label2.Text = "Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(379, 201);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(61, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "name";
+            this.label1.Text = "Name";
             // 
             // tabPage3
             // 
@@ -552,6 +579,7 @@
             this.allPages.Controls.Add(this.viewQuiz);
             this.allPages.Controls.Add(this.addQuiz);
             this.allPages.Controls.Add(this.tabPage1);
+            this.allPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.allPages.Location = new System.Drawing.Point(0, 0);
             this.allPages.Name = "allPages";
             this.allPages.SelectedIndex = 0;
@@ -560,22 +588,31 @@
             // 
             // viewAllAccount
             // 
+            this.viewAllAccount.Controls.Add(this.textBox20);
             this.viewAllAccount.Controls.Add(this.button15);
             this.viewAllAccount.Controls.Add(this.button10);
             this.viewAllAccount.Controls.Add(this.dataGridViewContributors);
-            this.viewAllAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewAllAccount.Location = new System.Drawing.Point(4, 25);
+            this.viewAllAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewAllAccount.Location = new System.Drawing.Point(4, 27);
             this.viewAllAccount.Name = "viewAllAccount";
             this.viewAllAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.viewAllAccount.Size = new System.Drawing.Size(997, 524);
+            this.viewAllAccount.Size = new System.Drawing.Size(997, 522);
             this.viewAllAccount.TabIndex = 0;
             this.viewAllAccount.Text = "🔍viewAllAccount";
             this.viewAllAccount.UseVisualStyleBackColor = true;
             // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(351, 12);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(225, 27);
+            this.textBox20.TabIndex = 9;
+            this.textBox20.Text = "Creators Information";
+            // 
             // button15
             // 
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(830, 67);
+            this.button15.Location = new System.Drawing.Point(702, 3);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(150, 44);
             this.button15.TabIndex = 8;
@@ -587,9 +624,9 @@
             // 
             this.button10.BackColor = System.Drawing.Color.IndianRed;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(844, 21);
+            this.button10.Location = new System.Drawing.Point(858, 9);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(136, 34);
+            this.button10.Size = new System.Drawing.Size(136, 38);
             this.button10.TabIndex = 7;
             this.button10.Text = "🔓logout";
             this.button10.UseVisualStyleBackColor = false;
@@ -597,17 +634,18 @@
             // 
             // dataGridViewContributors
             // 
+            this.dataGridViewContributors.BackgroundColor = System.Drawing.Color.Maroon;
             this.dataGridViewContributors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewContributors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.creator_id,
             this.Column9,
             this.Status1,
             this.apprDis});
-            this.dataGridViewContributors.Location = new System.Drawing.Point(43, 41);
+            this.dataGridViewContributors.Location = new System.Drawing.Point(8, 53);
             this.dataGridViewContributors.Name = "dataGridViewContributors";
             this.dataGridViewContributors.RowHeadersWidth = 51;
             this.dataGridViewContributors.RowTemplate.Height = 24;
-            this.dataGridViewContributors.Size = new System.Drawing.Size(728, 247);
+            this.dataGridViewContributors.Size = new System.Drawing.Size(972, 465);
             this.dataGridViewContributors.TabIndex = 0;
             // 
             // creator_id
@@ -637,51 +675,51 @@
             this.apprDis.MinimumWidth = 6;
             this.apprDis.Name = "apprDis";
             this.apprDis.Text = "approve/disapprove";
-            this.apprDis.Width = 135;
+            this.apprDis.Width = 175;
             // 
             // quizzes
             // 
+            this.quizzes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("quizzes.BackgroundImage")));
             this.quizzes.Controls.Add(this.button11);
-            this.quizzes.Controls.Add(this.quizFlowPanel);
             this.quizzes.Controls.Add(this.button12);
-            this.quizzes.Location = new System.Drawing.Point(4, 25);
+            this.quizzes.Controls.Add(this.quizFlowPanel);
+            this.quizzes.Location = new System.Drawing.Point(4, 27);
             this.quizzes.Name = "quizzes";
-            this.quizzes.Size = new System.Drawing.Size(997, 524);
+            this.quizzes.Size = new System.Drawing.Size(997, 522);
             this.quizzes.TabIndex = 3;
-            this.quizzes.Text = "Quizzes";
+            this.quizzes.Text = "❓Quizzes";
             this.quizzes.UseVisualStyleBackColor = true;
             // 
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.IndianRed;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(906, 52);
+            this.button11.Location = new System.Drawing.Point(866, 52);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(83, 37);
+            this.button11.Size = new System.Drawing.Size(123, 37);
             this.button11.TabIndex = 8;
             this.button11.Text = "🔓logout";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.logout_Click);
-            // 
-            // quizFlowPanel
-            // 
-            this.quizFlowPanel.AutoScroll = true;
-            this.quizFlowPanel.Location = new System.Drawing.Point(0, 5);
-            this.quizFlowPanel.Name = "quizFlowPanel";
-            this.quizFlowPanel.Size = new System.Drawing.Size(869, 516);
-            this.quizFlowPanel.TabIndex = 10;
-            this.quizFlowPanel.WrapContents = false;
             // 
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(866, 8);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(131, 33);
+            this.button12.Size = new System.Drawing.Size(131, 38);
             this.button12.TabIndex = 9;
             this.button12.Text = "👤viewaccount";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.ViewAccount);
+            // 
+            // quizFlowPanel
+            // 
+            this.quizFlowPanel.AutoScroll = true;
+            this.quizFlowPanel.Location = new System.Drawing.Point(0, 5);
+            this.quizFlowPanel.Name = "quizFlowPanel";
+            this.quizFlowPanel.Size = new System.Drawing.Size(997, 516);
+            this.quizFlowPanel.TabIndex = 10;
             // 
             // viewQuiz
             // 
@@ -689,19 +727,20 @@
             this.viewQuiz.Controls.Add(this.button16);
             this.viewQuiz.Controls.Add(this.button14);
             this.viewQuiz.Controls.Add(this.dataGridViewQuizzes);
-            this.viewQuiz.Location = new System.Drawing.Point(4, 25);
+            this.viewQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewQuiz.Location = new System.Drawing.Point(4, 27);
             this.viewQuiz.Name = "viewQuiz";
             this.viewQuiz.Padding = new System.Windows.Forms.Padding(3);
-            this.viewQuiz.Size = new System.Drawing.Size(997, 524);
+            this.viewQuiz.Size = new System.Drawing.Size(997, 522);
             this.viewQuiz.TabIndex = 4;
-            this.viewQuiz.Text = "ViewQuiz";
+            this.viewQuiz.Text = "🔍ViewQuiz";
             this.viewQuiz.UseVisualStyleBackColor = true;
             // 
             // button20
             // 
             this.button20.BackColor = System.Drawing.Color.IndianRed;
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(821, 71);
+            this.button20.Location = new System.Drawing.Point(849, 3);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(148, 37);
             this.button20.TabIndex = 10;
@@ -712,9 +751,9 @@
             // button16
             // 
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(810, 21);
+            this.button16.Location = new System.Drawing.Point(694, -1);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(159, 44);
+            this.button16.Size = new System.Drawing.Size(154, 42);
             this.button16.TabIndex = 9;
             this.button16.Text = "👤viewaccount";
             this.button16.UseVisualStyleBackColor = true;
@@ -722,9 +761,9 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(686, 154);
+            this.button14.Location = new System.Drawing.Point(548, 1);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(178, 40);
+            this.button14.Size = new System.Drawing.Size(140, 40);
             this.button14.TabIndex = 1;
             this.button14.Text = "Add quiz";
             this.button14.UseVisualStyleBackColor = true;
@@ -732,17 +771,18 @@
             // 
             // dataGridViewQuizzes
             // 
+            this.dataGridViewQuizzes.BackgroundColor = System.Drawing.Color.Maroon;
             this.dataGridViewQuizzes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewQuizzes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quiz_id,
             this.title,
             this.edit,
             this.delete});
-            this.dataGridViewQuizzes.Location = new System.Drawing.Point(136, 191);
+            this.dataGridViewQuizzes.Location = new System.Drawing.Point(8, 41);
             this.dataGridViewQuizzes.Name = "dataGridViewQuizzes";
             this.dataGridViewQuizzes.RowHeadersWidth = 51;
             this.dataGridViewQuizzes.RowTemplate.Height = 24;
-            this.dataGridViewQuizzes.Size = new System.Drawing.Size(728, 150);
+            this.dataGridViewQuizzes.Size = new System.Drawing.Size(971, 477);
             this.dataGridViewQuizzes.TabIndex = 0;
             this.dataGridViewQuizzes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
@@ -752,6 +792,7 @@
             this.quiz_id.HeaderText = "quiz_id";
             this.quiz_id.MinimumWidth = 6;
             this.quiz_id.Name = "quiz_id";
+            this.quiz_id.ReadOnly = true;
             this.quiz_id.Width = 125;
             // 
             // title
@@ -778,8 +819,9 @@
             // 
             // addQuiz
             // 
+            this.addQuiz.BackColor = System.Drawing.Color.Maroon;
             this.addQuiz.Controls.Add(this.panel1);
-            this.addQuiz.Controls.Add(this.textBox13);
+            this.addQuiz.Controls.Add(this.correctanswer);
             this.addQuiz.Controls.Add(this.subbtn);
             this.addQuiz.Controls.Add(this.button8);
             this.addQuiz.Controls.Add(this.addbtn);
@@ -788,16 +830,16 @@
             this.addQuiz.Controls.Add(this.textBox17);
             this.addQuiz.Controls.Add(this.textBox16);
             this.addQuiz.Controls.Add(this.textBox15);
-            this.addQuiz.Location = new System.Drawing.Point(4, 25);
+            this.addQuiz.Location = new System.Drawing.Point(4, 27);
             this.addQuiz.Name = "addQuiz";
             this.addQuiz.Padding = new System.Windows.Forms.Padding(3);
-            this.addQuiz.Size = new System.Drawing.Size(997, 524);
+            this.addQuiz.Size = new System.Drawing.Size(997, 522);
             this.addQuiz.TabIndex = 2;
-            this.addQuiz.Text = "addQuiz";
-            this.addQuiz.UseVisualStyleBackColor = true;
+            this.addQuiz.Text = "➕AddQuiz";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
             this.panel1.Controls.Add(this.button18);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.quizsubmit);
@@ -805,7 +847,8 @@
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Location = new System.Drawing.Point(3, 6);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(992, 512);
             this.panel1.TabIndex = 9;
@@ -813,10 +856,10 @@
             // button18
             // 
             this.button18.BackColor = System.Drawing.Color.IndianRed;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(809, 71);
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.Location = new System.Drawing.Point(811, 12);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(136, 43);
+            this.button18.Size = new System.Drawing.Size(177, 43);
             this.button18.TabIndex = 10;
             this.button18.Text = "🔓logout";
             this.button18.UseVisualStyleBackColor = false;
@@ -824,9 +867,10 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(809, 16);
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(632, 12);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(136, 44);
+            this.button9.Size = new System.Drawing.Size(177, 43);
             this.button9.TabIndex = 9;
             this.button9.Text = "👤viewaccount";
             this.button9.UseVisualStyleBackColor = true;
@@ -834,6 +878,7 @@
             // 
             // quizsubmit
             // 
+            this.quizsubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quizsubmit.Location = new System.Drawing.Point(405, 368);
             this.quizsubmit.Name = "quizsubmit";
             this.quizsubmit.Size = new System.Drawing.Size(90, 36);
@@ -844,50 +889,59 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(602, 157);
+            this.textBox7.Location = new System.Drawing.Point(495, 154);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(169, 22);
+            this.textBox7.Size = new System.Drawing.Size(207, 27);
             this.textBox7.TabIndex = 3;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(232, 157);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 16);
+            this.label15.Size = new System.Drawing.Size(181, 20);
             this.label15.TabIndex = 2;
             this.label15.Text = "Number Of Question";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(249, 84);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 16);
+            this.label14.Size = new System.Drawing.Size(72, 20);
             this.label14.TabIndex = 1;
             this.label14.Text = "Subject";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(602, 86);
+            this.textBox6.Location = new System.Drawing.Point(495, 91);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(169, 22);
+            this.textBox6.Size = new System.Drawing.Size(207, 27);
             this.textBox6.TabIndex = 0;
             // 
-            // textBox13
+            // correctanswer
             // 
-            this.textBox13.Location = new System.Drawing.Point(843, 481);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(118, 22);
-            this.textBox13.TabIndex = 11;
-            this.textBox13.Text = "correctanswer";
+            this.correctanswer.FormattingEnabled = true;
+            this.correctanswer.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D"});
+            this.correctanswer.Location = new System.Drawing.Point(351, 342);
+            this.correctanswer.Name = "correctanswer";
+            this.correctanswer.Size = new System.Drawing.Size(157, 26);
+            this.correctanswer.TabIndex = 12;
+            this.correctanswer.Text = "correctanswer";
             // 
             // subbtn
             // 
             this.subbtn.Enabled = false;
+            this.subbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subbtn.Location = new System.Drawing.Point(602, 428);
             this.subbtn.Name = "subbtn";
-            this.subbtn.Size = new System.Drawing.Size(75, 23);
+            this.subbtn.Size = new System.Drawing.Size(87, 29);
             this.subbtn.TabIndex = 10;
             this.subbtn.Text = "submit";
             this.subbtn.UseVisualStyleBackColor = true;
@@ -906,9 +960,10 @@
             // 
             // addbtn
             // 
+            this.addbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addbtn.Location = new System.Drawing.Point(381, 428);
             this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(75, 23);
+            this.addbtn.Size = new System.Drawing.Size(87, 29);
             this.addbtn.TabIndex = 8;
             this.addbtn.Text = "add";
             this.addbtn.UseVisualStyleBackColor = true;
@@ -916,62 +971,77 @@
             // 
             // textBox19
             // 
+            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox19.Location = new System.Drawing.Point(258, 116);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(370, 22);
+            this.textBox19.Size = new System.Drawing.Size(382, 27);
             this.textBox19.TabIndex = 7;
             this.textBox19.Text = "the question";
             // 
             // textBox18
             // 
+            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox18.Location = new System.Drawing.Point(649, 314);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(80, 22);
+            this.textBox18.Size = new System.Drawing.Size(92, 27);
             this.textBox18.TabIndex = 6;
             this.textBox18.Text = "choice D";
             // 
             // textBox17
             // 
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox17.Location = new System.Drawing.Point(129, 305);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(80, 22);
+            this.textBox17.Size = new System.Drawing.Size(92, 27);
             this.textBox17.TabIndex = 5;
             this.textBox17.Text = "choice C";
             // 
             // textBox16
             // 
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox16.Location = new System.Drawing.Point(649, 212);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(80, 22);
+            this.textBox16.Size = new System.Drawing.Size(92, 27);
             this.textBox16.TabIndex = 4;
             this.textBox16.Text = "choice B";
             // 
             // textBox15
             // 
+            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox15.Location = new System.Drawing.Point(129, 212);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(80, 22);
+            this.textBox15.Size = new System.Drawing.Size(92, 27);
             this.textBox15.TabIndex = 3;
             this.textBox15.Text = "choice A";
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox14);
             this.tabPage1.Controls.Add(this.button21);
             this.tabPage1.Controls.Add(this.button19);
             this.tabPage1.Controls.Add(this.listBoxQuizStatus);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(997, 524);
+            this.tabPage1.Size = new System.Drawing.Size(997, 522);
             this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "quizzesDone";
+            this.tabPage1.Text = "✔️QuizzesDone";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.Location = new System.Drawing.Point(370, 3);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(249, 27);
+            this.textBox14.TabIndex = 11;
+            this.textBox14.Text = "QUIZZES U HAVE DONE";
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(835, 57);
+            this.button21.Location = new System.Drawing.Point(671, 5);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(136, 33);
+            this.button21.Size = new System.Drawing.Size(158, 40);
             this.button21.TabIndex = 10;
             this.button21.Text = "👤viewaccount";
             this.button21.UseVisualStyleBackColor = true;
@@ -981,9 +1051,9 @@
             // 
             this.button19.BackColor = System.Drawing.Color.IndianRed;
             this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(851, 9);
+            this.button19.Location = new System.Drawing.Point(835, 6);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(120, 37);
+            this.button19.Size = new System.Drawing.Size(136, 37);
             this.button19.TabIndex = 9;
             this.button19.Text = "🔓logout";
             this.button19.UseVisualStyleBackColor = false;
@@ -991,11 +1061,14 @@
             // 
             // listBoxQuizStatus
             // 
+            this.listBoxQuizStatus.BackColor = System.Drawing.Color.Maroon;
+            this.listBoxQuizStatus.ColumnWidth = 12;
+            this.listBoxQuizStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxQuizStatus.FormattingEnabled = true;
-            this.listBoxQuizStatus.ItemHeight = 16;
-            this.listBoxQuizStatus.Location = new System.Drawing.Point(17, 21);
+            this.listBoxQuizStatus.ItemHeight = 20;
+            this.listBoxQuizStatus.Location = new System.Drawing.Point(17, 41);
             this.listBoxQuizStatus.Name = "listBoxQuizStatus";
-            this.listBoxQuizStatus.Size = new System.Drawing.Size(954, 484);
+            this.listBoxQuizStatus.Size = new System.Drawing.Size(954, 464);
             this.listBoxQuizStatus.TabIndex = 0;
             // 
             // Form1
@@ -1024,6 +1097,7 @@
             this.tabPage2.PerformLayout();
             this.allPages.ResumeLayout(false);
             this.viewAllAccount.ResumeLayout(false);
+            this.viewAllAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContributors)).EndInit();
             this.quizzes.ResumeLayout(false);
             this.viewQuiz.ResumeLayout(false);
@@ -1033,6 +1107,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1109,22 +1184,25 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button subbtn;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.FlowLayoutPanel quizFlowPanel;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ListBox listBoxQuizStatus;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quiz_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn title;
-        private System.Windows.Forms.DataGridViewButtonColumn edit;
-        private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.DataGridViewTextBoxColumn creator_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status1;
         private System.Windows.Forms.DataGridViewButtonColumn apprDis;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.ComboBox correctanswer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quiz_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn title;
+        private System.Windows.Forms.DataGridViewButtonColumn edit;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.Button button7;
     }
 }
 

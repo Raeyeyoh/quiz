@@ -36,15 +36,15 @@ namespace quiz.Controllers
         SELECT CAST(SCOPE_IDENTITY() as int);
     ";
 
-            SqlCommand command = new SqlCommand(sql, con);
+            SqlCommand cmd = new SqlCommand(sql, con);
 
-            command.Parameters.AddWithValue("@subject", Subject);
-            command.Parameters.AddWithValue("@createdBy", CreatedBy);
-            command.Parameters.AddWithValue("@noquestion", noquestion);
+            cmd.Parameters.AddWithValue("@subject", Subject);
+            cmd.Parameters.AddWithValue("@createdBy", CreatedBy);
+            cmd.Parameters.AddWithValue("@noquestion", noquestion);
             
 
             
-            int newQuizId = (int)command.ExecuteScalar();
+            int newQuizId = (int)cmd.ExecuteScalar();
 
             db.closeConnection();
 

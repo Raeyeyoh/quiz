@@ -17,9 +17,16 @@ namespace quiz
         private int quizId;
         private int currentUserId;
         public Action ReturnToQuizSelection { get; set; }
+     public int QuestionsCount
+        {
+            get { return questions.Count; }
+        }
 
-        public int QuestionsCount => questions.Count;
-        public int QuizId => quizId;
+        public int QuizId
+        {
+            get { return quizId; }
+        }
+
 
         public QuestionsUserControl(int userId, Action returnAction)
         {
@@ -48,18 +55,19 @@ namespace quiz
             else
             {
                 MessageBox.Show("No questions found for this quiz");
-                btnPrevious.Visible = btnNext.Visible = false;
+                   btnPrevious.Visible = false;
+                    btnNext.Visible = false;
             }
         }
-        private Questions _currentQuestion;
+        private Questions currentQuestion;
 
        
         private void DisplayQuestion(int index)
         {
             if (index >= 0 && index < questions.Count)
             {
-                var question = questions[index];
-                _currentQuestion = question;
+                Questions question = questions[index];
+                currentQuestion = question;
 
                 lblQuestionText.Text = question.QuestionText;
                 option1.Text = question.Options[0];
@@ -115,17 +123,14 @@ namespace quiz
             }
         }
 
-        public int CalculateScore()
-        {
-            return questions.Count(q => q.SelectedAnswer == q.CorrectOption);
-        }
+       
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int score = CalculateScore();
+            int score = new QuestionController().CalculateScore(questions);
             int totalQuestions = QuestionsCount;
 
-            var quizStatus = new UsersQuizStatus(
+            UsersQuizStatus quizStatus = new UsersQuizStatus(
                 currentUserId,
                 quizId,
                 "Completed",
@@ -137,29 +142,31 @@ namespace quiz
             if (saved)
             {
                 MessageBox.Show($"Quiz completed! Score: {score}/{totalQuestions}");
-                ReturnToQuizSelection?.Invoke();
+                ReturnToQuizSelection.Invoke();
             }
             else
             {
                 MessageBox.Show("Error saving your results");
             }
-            ReturnToQuizSelection?.Invoke();
+            ReturnToQuizSelection.Invoke();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void X_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Are you sure you want to exit? Your progress will be saved.", "Confirm Exit", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                
-                var status = new UsersQuizStatus(currentUserId, quizId, "In Progress", CalculateScore());
+                int score = new QuestionController().CalculateScore(questions);
+                var status = new UsersQuizStatus(currentUserId, quizId, "In Progress", score);
+
                 new UsersQuizStatusController().SaveOrUpdateStatus(status);
 
                 
-                ReturnToQuizSelection?.Invoke();
+                ReturnToQuizSelection.Invoke();
 
                 
                 this.Dispose();
+               
             }
         }
     }

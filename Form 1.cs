@@ -36,8 +36,12 @@ namespace quiz
             LoadQuizzes();
 
         }
-        
-       
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var seeder = new AdminSeeder();
+            seeder.SeedSuperAdmin();
+        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -118,6 +122,7 @@ namespace quiz
                     name = users.Name;
                     password = users.Password;
                     EMAIL = users.email;
+                    LoadQuizzes();
                     allPages.TabPages.Add(quizzes);
                     allPages.TabPages.Add(tabPage1);
                     LoadUserQuizStatuses(user_id);
@@ -173,19 +178,20 @@ namespace quiz
             }
         }
 
-
-       
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void X_Click(object sender, EventArgs e)
         {
-            var seeder = new AdminSeeder();
-            seeder.SeedSuperAdmin();
+            login.Visible = true;
+            login.BringToFront();
+             signup.Visible = false;
         }
-
-    
 
         private void logout_Click(object sender, EventArgs e)
         {
+            questionsList.Clear();
+            textBox7.Clear();
+            textBox6.Clear();
+            panel1.Visible = true;
+            ClearInputFields();
             login.Visible=true;
             login.BringToFront();
             namee.Text=null;
@@ -218,12 +224,17 @@ namespace quiz
                     
                 }
 
-                
                 quizFlowPanel.Visible = true;
                 quizFlowPanel.PerformLayout();
                 quizFlowPanel.Refresh();
+                
             }
-
+        private void ReturnToQuizSelection()
+        {
+            allPages.Visible = true;
+            questionControl.Visible = false;
+            LoadUserQuizStatuses(user_id);
+        }
         private void QuizControl_QuizStarted(object sender, EventArgs e)
         {
             var quizControl = (thequizzes)sender;
@@ -232,16 +243,9 @@ namespace quiz
            
             allPages.Visible = false;
 
-            
-            questionControl = new QuestionsUserControl(user_id, returnAction: () =>
-            {
-                
-                allPages.Visible = true;
-                questionControl.Visible = false;
-            });
-            questionControl.Dock = DockStyle.Fill;
 
-   
+            questionControl = new QuestionsUserControl(user_id, ReturnToQuizSelection);
+            questionControl.Dock = DockStyle.Fill;
 
             questionControl.LoadQuestions(quizId);
 
@@ -256,7 +260,7 @@ namespace quiz
         {
 
             if (status != "Approved") {
-                MessageBox.Show("can not add questions,your account isnt not approved account contact us");
+                MessageBox.Show("can not add questions,your account is not approved  contact us");
             }
             else {
             if (!allPages.TabPages.Contains(addquiztabpage))
@@ -291,8 +295,13 @@ namespace quiz
 
         private void submitQuizInfo(object sender, EventArgs e)
         {
+            if(!string.IsNullOrWhiteSpace(textBox7.Text) && !string.IsNullOrWhiteSpace(textBox6.Text)) { 
                  panel1.Visible = false;
-            
+            }
+            else
+            {
+                MessageBox.Show("enter correct format");
+            }
         }
 
 
@@ -313,9 +322,34 @@ namespace quiz
         textBox17.Text,
         textBox18.Text
     };
-            string correctOption = textBox13.Text;
+            string correctOption;
+            switch(correctanswer.SelectedIndex)
+                {
+                      case 0:
+                    correctOption = textBox15.Text;
+                    
+                    break;
+                case 1:
+                    correctOption = textBox16.Text;
+                    
+                    break;
+                case 2:
+                    correctOption = textBox17.Text;
+                    
+                    break;
+                case 3:
+                    correctOption = textBox18.Text;
+                    break;
+                    default:
+                    correctOption = null;
+               MessageBox.Show("choose correct answer");
+                   break;
+                      
+                }  
+                
 
-            Questions question = new Questions
+
+                Questions question = new Questions
             {
                 QuestionText = questionText,
                 Options = options,
@@ -356,7 +390,12 @@ namespace quiz
                 qc.AddQuestion(q.QuestionText, q.Options, q.CorrectOption, quizId);
                 currentQuestionIndex ++;
             }
-
+            textBox15.Visible=false;
+            textBox16.Visible = false;
+            textBox17.Visible = false;
+            textBox18.Visible = false;
+            
+            textBox19.Visible = false;
             MessageBox.Show("Quiz and questions created successfully!");
             subbtn.Enabled = false;
             questionsList.Clear();
@@ -370,12 +409,14 @@ namespace quiz
         textBox16.Clear();
         textBox17.Clear();
         textBox18.Clear();
-         textBox13.Clear();
+        
             textBox19.Clear();
-       }
-       
+            
 
-       
+        }
+
+
+
 
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -490,6 +531,7 @@ namespace quiz
             }
         }
 
+        
     }
 
 }

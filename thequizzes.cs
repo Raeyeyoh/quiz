@@ -34,7 +34,7 @@ namespace quiz
         {
             MessageBox.Show("get ready!"); 
 
-            QuizStarted?.Invoke(this, EventArgs.Empty);
+            QuizStarted?.Invoke(this, EventArgs.Empty);//all the methods
 
         }
 

@@ -19,12 +19,12 @@ namespace quiz
             {
                 try
                 {
-                    using (SqlConnection con = new dbconnection().openConnection())
-                    {
+                    SqlConnection con = new dbconnection().openConnection()
+                    
                         if (AdminExists(con, AdminEmail))
                         {
-                            
-                            return;
+                            return ;
+                           
                         }
 
                         
@@ -33,8 +33,8 @@ namespace quiz
                     
                      
 
-                        using (SqlCommand cmd = new SqlCommand(sql, con))
-                        {
+                        SqlCommand cmd = new SqlCommand(sql, con)
+                        
                             cmd.Parameters.AddWithValue("@name", AdminName);
                             cmd.Parameters.AddWithValue("@email", AdminEmail);
                             cmd.Parameters.AddWithValue("@password", AdminPassword);
@@ -49,17 +49,17 @@ namespace quiz
           
                             }
                     
-                        }
+                  }       
                     
-                       
-                    }
-                }
-                catch (Exception ex)
+                  catch (Exception ex)
                 {
                     Console.WriteLine($"Error seeding admin: {ex.Message}");
                  
                 }
-            }
+            }     
+                    
+               
+                
 
             private bool AdminExists(SqlConnection con, string email)
             {

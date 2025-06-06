@@ -1,6 +1,7 @@
 ﻿using quiz.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace quiz.Controllers
         {
             dbconnection db = new dbconnection();
             SqlConnection con = db.openConnection();
-
+            
             string query = "INSERT INTO users (user_name, email, password) VALUES (@name, @mail, @pass)";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@name", name);

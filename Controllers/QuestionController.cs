@@ -44,10 +44,6 @@ namespace quiz.Controllers
             dbconnection db = new dbconnection();
             SqlConnection con = db.openConnection();
 
-
-
-
-
             string query = @"SELECT *
                                 FROM Questions 
                                 WHERE quiz_id = @quizId";
@@ -127,6 +123,20 @@ namespace quiz.Controllers
 
 
 
+        }
+        public int CalculateScore(List<Questions> questions)
+        {
+            int correctCount = 0;
+
+            foreach (var question in questions)
+            {
+                if (question.SelectedAnswer == question.CorrectOption)
+                {
+                    correctCount++;
+                }
+            }
+
+            return correctCount;
         }
 
     }

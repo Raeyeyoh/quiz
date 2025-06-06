@@ -43,110 +43,129 @@
             // lblQuestionText
             // 
             this.lblQuestionText.AutoSize = true;
-            this.lblQuestionText.Location = new System.Drawing.Point(273, 95);
+            this.lblQuestionText.BackColor = System.Drawing.Color.White;
+            this.lblQuestionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestionText.Location = new System.Drawing.Point(225, 95);
             this.lblQuestionText.Name = "lblQuestionText";
-            this.lblQuestionText.Size = new System.Drawing.Size(143, 16);
+            this.lblQuestionText.Size = new System.Drawing.Size(201, 20);
             this.lblQuestionText.TabIndex = 0;
             this.lblQuestionText.Text = "the question goes here";
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(448, 353);
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(434, 353);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(64, 24);
+            this.btnNext.Size = new System.Drawing.Size(73, 40);
             this.btnNext.TabIndex = 9;
             this.btnNext.Text = "next";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(154, 353);
+            this.btnPrevious.BackColor = System.Drawing.Color.White;
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Location = new System.Drawing.Point(113, 353);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(53, 24);
+            this.btnPrevious.Size = new System.Drawing.Size(53, 40);
             this.btnPrevious.TabIndex = 10;
             this.btnPrevious.Text = "prev";
-            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(291, 329);
+            this.btnSubmit.BackColor = System.Drawing.Color.White;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(537, 406);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(62, 24);
+            this.btnSubmit.Size = new System.Drawing.Size(93, 27);
             this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // option1
             // 
             this.option1.AutoSize = true;
+            this.option1.BackColor = System.Drawing.Color.White;
+            this.option1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.option1.Location = new System.Drawing.Point(115, 183);
             this.option1.Name = "option1";
-            this.option1.Size = new System.Drawing.Size(37, 20);
+            this.option1.Size = new System.Drawing.Size(42, 24);
             this.option1.TabIndex = 12;
             this.option1.TabStop = true;
             this.option1.Text = "A";
-            this.option1.UseVisualStyleBackColor = true;
+            this.option1.UseVisualStyleBackColor = false;
             // 
             // option3
             // 
             this.option3.AutoSize = true;
+            this.option3.BackColor = System.Drawing.Color.White;
+            this.option3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.option3.Location = new System.Drawing.Point(115, 268);
             this.option3.Name = "option3";
-            this.option3.Size = new System.Drawing.Size(37, 20);
+            this.option3.Size = new System.Drawing.Size(43, 24);
             this.option3.TabIndex = 13;
             this.option3.TabStop = true;
             this.option3.Text = "C";
-            this.option3.UseVisualStyleBackColor = true;
+            this.option3.UseVisualStyleBackColor = false;
             // 
             // option2
             // 
             this.option2.AutoSize = true;
+            this.option2.BackColor = System.Drawing.Color.White;
+            this.option2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.option2.Location = new System.Drawing.Point(434, 183);
             this.option2.Name = "option2";
-            this.option2.Size = new System.Drawing.Size(37, 20);
+            this.option2.Size = new System.Drawing.Size(43, 24);
             this.option2.TabIndex = 14;
             this.option2.TabStop = true;
             this.option2.Text = "B";
-            this.option2.UseVisualStyleBackColor = true;
+            this.option2.UseVisualStyleBackColor = false;
             // 
             // option4
             // 
             this.option4.AutoSize = true;
+            this.option4.BackColor = System.Drawing.Color.White;
+            this.option4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.option4.Location = new System.Drawing.Point(434, 281);
             this.option4.Name = "option4";
-            this.option4.Size = new System.Drawing.Size(38, 20);
+            this.option4.Size = new System.Drawing.Size(44, 24);
             this.option4.TabIndex = 15;
             this.option4.TabStop = true;
             this.option4.Text = "D";
-            this.option4.UseVisualStyleBackColor = true;
+            this.option4.UseVisualStyleBackColor = false;
             // 
             // lblQuestionNumber
             // 
             this.lblQuestionNumber.AutoSize = true;
+            this.lblQuestionNumber.BackColor = System.Drawing.Color.White;
+            this.lblQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestionNumber.Location = new System.Drawing.Point(40, 95);
             this.lblQuestionNumber.Name = "lblQuestionNumber";
-            this.lblQuestionNumber.Size = new System.Drawing.Size(40, 16);
+            this.lblQuestionNumber.Size = new System.Drawing.Size(54, 20);
             this.lblQuestionNumber.TabIndex = 16;
             this.lblQuestionNumber.Text = "numb";
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(559, 15);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 27);
+            this.button1.Size = new System.Drawing.Size(47, 36);
             this.button1.TabIndex = 17;
-            this.button1.Text = "❎ exit";
+            this.button1.Text = "❎ ";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.X_Click);
             // 
             // QuestionsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Maroon;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblQuestionNumber);
             this.Controls.Add(this.option4);
